@@ -116,14 +116,100 @@ export default function Footer() {
           </p>
         </div>
       </div>
+      <div className="copy2">
+        <div className="container">
+          <div className="barFixed">
+            <div className="contactFooter">
+              <i className="fa-sharp iHoverContacts iconDisplayNone espacoIcons fa-lg fa-solid fa-phone">
+                {"  "}
+                <b>(61) 99999 - 9999</b>
+              </i>
+              <i className="fa-solid iHoverContacts iconDisplayNone espacoIcons fa-lg fa-envelope">
+                {"  "}
+                <b>email@email.com</b>
+              </i>
+            </div>
+            <div className="socialMedia">
+              <i className="fa-brands iHover espacoIcons fa-lg fa-youtube"></i>
+              <i className="fa-brands iHover espacoIcons fa-lg fa-linkedin"></i>
+              <i className="fa-brands iHover espacoIcons fa-lg fa-instagram"></i>
+              <i className="fa-brands iHover espacoIcons fa-lg fa-square-facebook"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="whatsapp">
+        <a href="https://wa.me/5561985487081?text=Tenho%20interesse%20em%20comprar%20seu%20carro">
+          <img src="/images/icons8-whatsapp.svg" width="80"></img>
+        </a>
+      </div>
       <style jsx>
         {`
-          footer {
-            margin-top: ${spacing.xlarge};
-            padding-top: ${spacing.xlarge};
-            background: ${colors.lightGrey};
+          @media (max-width: 48em) {
+            .iconDisplayNone {
+              display: none;
+            }
+            .barFixed {
+              display: flex;
+              justify-content: flex-start;
+            }
           }
 
+          .iHover:hover {
+            transform: scale(1.3);
+            transition-timing-function: ease;
+            transition-duration: 0.5s;
+          }
+          .iHoverContacts:hover {
+            transform: scale(1.1);
+            transition-timing-function: ease;
+            transition-duration: 0.5s;
+          }
+          .whatsapp {
+            position: fixed;
+            bottom: 0;
+            right: 40px;
+          }
+          .whatsapp:hover {
+            transform: scale(1.1);
+            transition-timing-function: ease;
+            transition-duration: 0.5s;
+          }
+          .espacoIcons {
+            margin: 0 20px 0 20px;
+            color: white;
+          }
+          b {
+            font-family: Roboto, sans-serif;
+          }
+          .socialMedia {
+            display: flex;
+            justify-content: space-around;
+          }
+          .contactFooter {
+            display: flex;
+            justify-content: space-around;
+          }
+          .barFixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            background-color: #e5e9ee;
+            width: 100vw;
+            height: 40px;
+            background-color: #5f697d;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: row-reverse;
+          }
+          .copy2 {
+            background: white;
+            width: 100%;
+            height: 40px;
+            color: #444;
+            padding: 2px 4px;
+          }
           .copy {
             font-size: 12px;
             font-family: ${typography.fontFamilyMono};
@@ -131,6 +217,11 @@ export default function Footer() {
             padding: 2px 4px;
             margin-top: ${spacing.large};
             color: #444;
+          }
+          footer {
+            margin-top: ${spacing.xlarge};
+            padding-top: ${spacing.xlarge};
+            background: ${colors.lightGrey};
           }
 
           h3 {

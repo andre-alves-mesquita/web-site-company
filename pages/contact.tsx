@@ -20,15 +20,16 @@ export default function ContactUs() {
               {query.success ? (
                 <p>
                   Thank you for your message. We will get back to you as soon as
-                  possible.
+                  possible. Apenas um teste
                 </p>
               ) : (
-                <form
-                  action="https://app.getoutline.com/api/contactMessage.create"
-                  method="POST"
-                >
+                <form action="http://localhost:3030/send" method="POST">
+                  {/* // <form
+                //   action="https://app.getoutline.com/api/contactMessage.create"
+                //   method="POST"
+                // > */}
                   <label>
-                    <div>Your name</div>
+                    <div>Seu nome</div>
                     <input type="text" name="name" required />
                   </label>
                   <label className="website">
@@ -36,11 +37,11 @@ export default function ContactUs() {
                     <input type="text" name="url" />
                   </label>
                   <label>
-                    <div>Email address</div>
+                    <div>Email</div>
                     <input type="email" name="replyTo" required />
                   </label>
                   <label>
-                    <div>Contact reason</div>
+                    <div>Razão do contato</div>
                     <select name="subject" required>
                       <option disabled value="">
                         Contact reason…
@@ -58,7 +59,7 @@ export default function ContactUs() {
                     </select>
                   </label>
                   <label>
-                    <div>Deployment</div>
+                    <div>Implantação</div>
                     <select name="deployment" required>
                       <option value="cloud">Cloud (getoutline.com)</option>
                       <option value="enterprise">Enterprise</option>
@@ -66,14 +67,14 @@ export default function ContactUs() {
                     </select>
                   </label>
                   <label>
-                    <div>Your message</div>
+                    <div>Sua mensagem</div>
                     <textarea
                       name="text"
                       placeholder="What can we help with?"
                       required
                     />
                   </label>
-                  <button type="submit">Send Message</button>
+                  <button type="submit">Enviar mensagem</button>
                 </form>
               )}
             </div>

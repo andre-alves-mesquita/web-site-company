@@ -13,11 +13,10 @@ import {
 import Card from "components/Card";
 import Hero from "components/Hero";
 import Screenshot from "components/Screenshot";
-import GetStarted from "components/GetStarted";
 import Layout from "components/Layout";
 import GithubLogo from "components/GithubLogo";
 import { spacing, colors, typography } from "theme";
-import Companies from "components/companies";
+import Companies from "components/Companies";
 
 resetIdCounter();
 
@@ -595,6 +594,9 @@ export default function Home() {
       `}</style>
       <style jsx global>
         {`
+          body {
+            overflow-x: hidden;
+          }
           .pull-icon {
             margin-left: -4px;
           }

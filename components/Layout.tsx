@@ -86,6 +86,10 @@ export default function Layout({
           href="https://unpkg.com/purecss@2.0.3/build/grids-responsive-min.css"
         />
         <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        />
+        <link
           rel="alternate"
           type="application/rss+xml"
           title="Changelog RSS"

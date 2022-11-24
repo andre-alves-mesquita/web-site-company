@@ -1,72 +1,61 @@
-import { useEffect, useState } from "react";
-
 export default function Companies() {
-  const [div1, setDiv1] = useState(0);
-
-  function carrouselFunction() {
-    if (div1 === 0) {
-      setDiv1(div1 + 1);
-    } else {
-      setDiv1(0);
-    }
-  }
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      carrouselFunction();
-    }, 2000);
-    return () => clearInterval(id);
-  }, [div1]);
-
   return (
     <>
       <div className="carrousel">
-        {div1 === 0 ? (
+        <div className="caixa">
           <div className="div1">
-            <img className="imgcarrousel" src="/images/logo_vmware.png"></img>
-            <img className="imgcarrousel" src="/images/logo_mikrotik.png"></img>
-            <img className="imgcarrousel" src="/images/logo_cisco.png"></img>
+            <img src="/images/companies.png"></img>
           </div>
-        ) : (
-          <div className="div2">
-            <img className="imgcarrousel" src="/images/logo_cisco.png"></img>
-            <img className="imgcarrousel" src="/images/logo_juniper.png"></img>
-            <img className="imgcarrousel" src="/images/logo_huawei.png"></img>
-          </div>
-        )}
+        </div>
       </div>
       <style jsx>{`
         .carrousel {
-          background-color: red;
+          background-color: gray;
           display: flex;
           justify-content: center;
+        }
+        .caixa {
+          width: 1000px;
+          position: relative;
+          overflow: hidden;
         }
         .div1 {
           display: flex;
           flex-wrap: nowrap;
           padding: 20px;
-          background-color: blue;
           width: 1000px;
           justify-content: space-around;
+          animation: go-back 6s infinite;
+          animation-timing-function: ease;
+          animation-direction: alternate-reverse;
         }
-        .div2 {
-          display: flex;
-          flex-wrap: nowrap;
-          padding: 20px;
-          background-color: blue;
-          width: 1000px;
-          justify-content: space-around;
-        }
-        .imgcarrousel {
-          width: 200px;
-          height: 90px;
-        }
-        .selected {
-          transform: translate3d(-1000px, 0px, 0px);
-          transition-duration: 300ms;
-        }
-        .notSelected {
-          display: none;
+
+        @keyframes go-back {
+          0%,
+          10% {
+            transform: translate3d(-1500px, 0px, 0px);
+          }
+          20% {
+            transform: translate3d(-1500px, 0px, 0px);
+          }
+          30%,
+          40% {
+            transform: translate3d(-500px, 0px, 0px);
+          }
+          50% {
+            transform: translate3d(-500px, 0px, 0px);
+          }
+          60%,
+          70% {
+            transform: translate3d(500px, 0px, 0px);
+          }
+          80% {
+            transform: translate3d(500px, 0px, 0px);
+          }
+          90%,
+          100% {
+            transform: translate3d(1500px, 0px, 0px);
+          }
         }
       `}</style>
     </>
